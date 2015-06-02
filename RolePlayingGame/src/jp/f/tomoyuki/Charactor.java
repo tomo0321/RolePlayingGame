@@ -9,6 +9,23 @@ public class Charactor {
 	private int defence; //防御力
 	private int exp; //経験値
 
+	Charactor(int hp, String name, int level, int power, int defence, int exp){
+		this.hp = hp;
+		this.name = name;
+		this.level = level;
+		this.power = power;
+		this.defence = defence;
+		this.exp = exp;
+	}
+
+	Charactor(int hp, String name, int level, int power, int defence){
+		this.hp = hp;
+		this.name = name;
+		this.level = level;
+		this.power = power;
+		this.defence = defence;
+	}
+
 	//攻撃を与えるメソッド
 	public int attack(){
 		System.out.println(name + "は攻撃を行った！");
