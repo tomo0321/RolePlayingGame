@@ -2,8 +2,8 @@ package jp.f.tomoyuki;
 
 public class Human extends Charactor {
 
-	public Human() {
-		// TODO 自動生成されたコンストラクター・スタブ
+	public Human(int hp, String name, int level, int power, int defence, int exp){
+		super(hp, name, level, power, defence, exp);
 	}
 	//逃げるメソッド
 		public void run(){
