@@ -1,6 +1,7 @@
 package jp.f.tomoyuki;
 
 public class Charactor {
+
 	private int hp; //HP
 	private String name; //名前
 	private int level; //レベル
@@ -8,7 +9,20 @@ public class Charactor {
 	private int defence; //防御力
 	private int exp; //経験値
 
-
+	//攻撃を与えるメソッド
+	public int attack(){
+		System.out.println(name + "は攻撃を行った！");
+		int damage = power;
+		return damage;
+	}
+	//ダメージを受けるメソッド
+	public void damage(int damage){
+		int tempHp = getHp();
+		System.out.println(name + "は" + damage +  "の攻撃を受けた");
+		tempHp -= damage;
+		System.out.println(name + "の残りHPは" + tempHp);
+		setHp(tempHp);
+	}
 
 	public int getHp() {
 		return hp;
