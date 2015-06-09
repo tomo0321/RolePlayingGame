@@ -26,8 +26,8 @@ public class World {
 	}
 
 	// 行動
-	public void action() {
-		currentArea.action();
+	public void action(ArrayList<Human> party) {
+		currentArea.action(party);
 	}
 
 	// エリア移動

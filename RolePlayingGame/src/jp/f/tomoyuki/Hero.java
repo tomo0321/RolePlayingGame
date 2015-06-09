@@ -6,6 +6,11 @@ public class Hero extends Human {
 		super(hp, name, level, power, defence, exp);
 	}
 
+	//レベル計算式
+	public int LevelUp(){
+		int level = (int) (Math.pow( (getExp()+1), 0.3415621565 )+9);//レベル=（累積経験値＋１）＾０．３４１５６２１５６５＋９
+		return level;
+	}
 
 	@Override
 	public String toString(){
