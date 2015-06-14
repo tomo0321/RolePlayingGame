@@ -4,13 +4,34 @@ import java.util.ArrayList;
 
 import jp.f.tomoyuki.Human;
 
+/**
+ * エリアを表す抽象クラス．
+ *
+ * @author OkuboTakahiro
+ *
+ */
 public abstract class Area {
 	private String areaName;
 
-	// エリアで何らかの行動をする
+	public Area() {
+		areaName = "";
+	}
+
+	public Area(String areaName) {
+		this.areaName = areaName;
+	}
+
+	/**
+	 * このエリアで行動する．
+	 *
+	 * @param party
+	 *            パーティ
+	 */
 	public abstract void action(ArrayList<Human> party);
 
-	// コマンド選択
+	/**
+	 * コマンド選択．
+	 */
 	public abstract void chooseCommand();
 
 	public String getAreaName() {

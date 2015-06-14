@@ -4,23 +4,24 @@ import java.util.ArrayList;
 
 import jp.f.tomoyuki.Human;
 
+/**
+ * ダンジョンエリア．
+ *
+ * @author OkuboTakahiro
+ *
+ */
 public class Dungeon extends Area {
 	private ArrayList<Floor> floors; // フロアリスト
-	private int currentFloor; // 現在のフロア
 
-	public Dungeon(Floor floor) {
+	public Dungeon(String areaName, Floor floor) {
+		super(areaName);
 		floors = new ArrayList<Floor>();
 		floors.add(floor);
-		currentFloor = 1;
 	}
 
-	public Dungeon(ArrayList<Floor> floors) {
+	public Dungeon(String areaName, ArrayList<Floor> floors) {
+		super(areaName);
 		this.floors = floors;
-		currentFloor = 1;
-	}
-
-	public int getCurrentFloor() {
-		return currentFloor;
 	}
 
 	public ArrayList<Floor> getFloors() {
@@ -32,13 +33,12 @@ public class Dungeon extends Area {
 		// TODO 自動生成されたメソッド・スタブ
 		// ダンジョンでの行動
 
-		System.out.println("ここはダンジョンです．");
+		System.out.println("ここはダンジョン[" + getAreaName() + "]です．");
 
-		while (true) {
-			System.out.println("現在[" + currentFloor + "階]です．");
+		for (int i = 0; i < floors.size(); i++) {
+			System.out.println("現在[" + (i + 1) + "階]です．");
 
-			// このフロアの敵とバトル
-			//ButtleManager.buttle(floors.get(currentFloor), party);
+			floors.get(i).action(party);
 
 			// 最終フロアをクリアするか，諦めた場合は，ループを抜ける
 		}
